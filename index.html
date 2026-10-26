@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="TypeFlow — o'zbekcha, inglizcha va ruscha matnlar bilan yozish tezligi va aniqligini oshiring.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="assets/typeflow-icon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <title>TypeFlow — Typing Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#practicePage">Asosiy kontentga o'tish</a>
+<div class="app">
+  <aside class="sidebar" aria-label="Asosiy navigatsiya">
+    <a class="logo" href="#practicePage" aria-label="TypeFlow bosh sahifa">
+      <img class="brand-logo" src="assets/typeflow-logo.svg" alt="" width="36" height="36">
+      <span>Type<span class="blue">Flow</span><small class="logo-caption">TYPE SMART. FLOW FAST.</small></span>
+    </a>
+    <div class="side-label">WORKSPACE</div>
+    <nav>
+      <button class="nav-btn active" data-page="practice"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h.01M11 9h.01M15 9h.01M7 12h.01M11 12h.01M15 12h.01M9 15h6"/></svg><span data-i18n="practice">Mashq qilish</span></button>
+      <button class="nav-btn" data-page="stats"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h17"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="13" y="7" width="3" height="9" rx="1"/><rect x="19" y="9" width="2" height="7" rx="1"/></svg><span data-i18n="stats">Statistika</span></button>
+      <button class="nav-btn" data-page="goals"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 2v4M22 12h-4"/></svg><span data-i18n="goals">Kunlik maqsad</span></button>
+      <button class="nav-btn" data-page="subscriptions"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 8 3 3 4-6 4 6 3-3-2 11H7L5 8Z"/><path d="M8 15h8"/></svg><span>Obuna tariflari</span></button>
+      <button class="nav-btn" data-page="settings"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.2 1-1.5 2.6-1.5-.6a7.8 7.8 0 0 1-1.6.9l-.3 1.6h-3l-.3-1.6a7.8 7.8 0 0 1-1.6-.9l-1.5.6-1.5-2.6 1.2-1a7.4 7.4 0 0 1 0-1.8l-1.2-1 1.5-2.6 1.5.6a7.8 7.8 0 0 1 1.6-.9l.3-1.6h3l.3 1.6a7.8 7.8 0 0 1 1.6.9l1.5-.6 1.5 2.6-1.2 1a7.4 7.4 0 0 1-.1 1.7Z"/></svg><span data-i18n="settings">Sozlamalar</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="mini-progress"><div id="dailyProgress"></div></div>
+      <div class="daily-caption"><span data-i18n="todayXP">Bugungi XP</span><strong id="sideXP">0 XP</strong></div>
+      <small>TypeFlow v2.0 · Practice smart</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">TYPING WORKSPACE</p><h1 id="pageTitle">Yozish mashqi</h1></div>
+      <div class="top-actions">
+        <button id="themeToggle" class="round-btn" title="Mavzuni almashtirish" aria-label="Mavzuni almashtirish">☾</button>
+        <div class="profile" aria-label="TypeFlow profil"><img src="assets/typeflow-icon.svg" alt="" width="25" height="25"></div>
+      </div>
+    </header>
+
+    <section id="practicePage" class="page">
+      <div class="welcome">
+        <div>
+          <span class="tag">YOUR DAILY PRACTICE</span>
+          <h2 data-i18n="heroTitle">Har bir harf seni<br>maqsadingga yaqinlashtiradi.</h2>
+          <p data-i18n="heroDesc">Tezlikni oshir, aniqlikni saqla va natijangni kuzat.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true"><div class="art-key"><img src="assets/typeflow-icon.svg" alt="" width="64" height="64"></div><span>TYPE BETTER · FLOW FASTER</span></div>
+      </div>
+
+      <div class="section-heading"><div><h3 data-i18n="chooseLevel">Darajani tanla</h3><p data-i18n="levelDesc">O'zingga mos qiyinlikni tanla.</p></div><div class="xp-pill">✦ <span id="xpValue">0</span> XP</div></div>
+      <div class="levels">
+        <button class="level active" data-level="oddiy"><span class="level-number">01</span><strong>Oddiy</strong><small data-i18n="easyDesc">Boshlovchilar uchun</small></button>
+        <button class="level" data-level="plus"><span class="level-number">02</span><strong>Plus</strong><small data-i18n="plusDesc">O'rta daraja</small></button>
+        <button class="level" data-level="pro"><span class="level-number">03</span><strong>Pro</strong><small data-i18n="proDesc">Murakkab mashqlar</small></button>
+        <button class="level" data-level="ultra"><span class="level-number">04</span><strong>Ultra</strong><small data-i18n="ultraDesc">Professional daraja</small></button>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-header"><div><h3 data-i18n="typingPractice">Yozish mashqi</h3><p data-i18n="typingDesc">Random so'zlar yoki matn bilan mashq qil.</p></div><button id="refreshBtn" class="icon-btn" title="Yangi so'zlar">↻</button></div>
+        <div class="controls">
+          <div class="mode-switch"><button class="mode active" data-mode="words" data-i18n="randomWords">Random so'zlar</button><button class="mode" data-mode="text" data-i18n="textMode">Matn</button></div>
+          <div class="time-options"><button class="time-btn" data-time="30">30s</button><button class="time-btn active" data-time="60">60s</button><button class="time-btn" data-time="90">90s</button><button class="time-btn" data-time="120">120s</button></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><span>WPM</span><strong id="wpm">0</strong><small data-i18n="wordsPerMinute">so'z/min</small></div>
+          <div class="metric"><span data-i18n="accuracy">Aniqlik</span><strong id="accuracy">100%</strong><small data-i18n="accuracyCaption">to'g'ri yozish</small></div>
+          <div class="metric"><span data-i18n="timeLeft">Qolgan vaqt</span><strong id="timer">60s</strong><small data-i18n="countdown">hisoblagich</small></div>
+          <div class="metric"><span data-i18n="correctChars">To'g'ri belgilar</span><strong id="correct">0</strong><small data-i18n="characters">belgi</small></div>
+        </div>
+        <div class="typing-area">
+          <div id="textDisplay" class="text-display" aria-live="polite"></div>
+          <textarea id="typingInput" aria-label="Yozish mashqi maydoni" placeholder="Mashqni boshlash uchun shu yerga yoz..." spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+          <div class="typing-hint"><span>↵ <span data-i18n="keepTyping">Yozishni davom et</span></span><span>ESC <span data-i18n="restartHint">qayta boshlash</span></span></div>
+        </div>
+        <div class="practice-footer"><span id="practiceMessage">Boshlash uchun yozishni boshlang.</span><button id="resetBtn" class="primary-btn" data-i18n="restart">Qayta boshlash ↻</button></div>
+      </div>
+      <div class="bottom-grid">
+        <div class="info-card"><span class="info-icon">⚡</span><div><h4 data-i18n="focusTitle">Aniqlikni birinchi o'ringa qo'y</h4><p data-i18n="focusDesc">Avval xatosiz yozishga odatlan, tezlik keyin oshadi.</p></div></div>
+        <div class="info-card"><span class="info-icon">✦</span><div><h4 data-i18n="streakTitle">Har kuni mashq qil</h4><p data-i18n="streakDesc">XP yig' va ketma-ket mashq kunlarini saqla.</p></div></div>
+      </div>
+    </section>
+
+    <section id="statsPage" class="page hidden">
+      <div class="page-intro"><span class="tag">YOUR PROGRESS</span><h2>Natijalaring</h2><p>Oldingi mashqlaringni solishtir va o'sishingni kuzat.</p></div>
+      <div class="stats-summary">
+        <div class="stat-box"><span>Eng yaxshi WPM</span><strong id="bestWpm">0</strong></div>
+        <div class="stat-box"><span>O'rtacha WPM</span><strong id="avgWpm">0</strong></div>
+        <div class="stat-box"><span>Mashqlar soni</span><strong id="testCount">0</strong></div>
+        <div class="stat-box"><span>O'rtacha aniqlik</span><strong id="avgAccuracy">0%</strong></div>
+      </div>
+      <div class="simple-card chart-card"><div class="card-heading"><div><h3>Tezlik grafigi</h3><p>Oxirgi 10 ta mashq</p></div><span class="chart-legend"><i></i> WPM</span></div><div id="chart" class="chart"></div></div>
+      <div class="simple-card"><h3>Oxirgi mashqlar</h3><div id="historyList" class="history-list"></div><button id="clearStats" class="secondary-btn">Statistikani tozalash</button></div>
+    </section>
+
+    <section id="goalsPage" class="page hidden">
+      <div class="page-intro"><span class="tag">BUILD A HABIT</span><h2>Kunlik maqsad</h2><p>Kichik qadamlar muntazamlikni shakllantiradi.</p></div>
+      <div class="goal-card">
+        <div class="goal-icon">✦</div><h3 id="goalGreeting">Bugungi maqsading</h3><p>Kunlik mashq maqsadingni belgila va bajarilganini kuzat.</p>
+        <div class="goal-progress"><div id="goalBar"></div></div><div class="goal-numbers"><strong id="goalDone">0 / 3 mashq</strong><span id="goalPercent">0%</span></div>
+        <label class="goal-setting">Kunlik mashqlar soni <select id="dailyGoal"><option value="1">1 ta</option><option value="3" selected>3 ta</option><option value="5">5 ta</option><option value="10">10 ta</option></select></label>
+      </div>
+      <div class="stats-summary"><div class="stat-box"><span>Jami XP</span><strong id="totalXP">0</strong></div><div class="stat-box"><span>Daraja</span><strong id="userLevel">1</strong></div><div class="stat-box"><span>Bugungi mashq</span><strong id="todayCount">0</strong></div><div class="stat-box"><span>Ketma-ket kun</span><strong id="streakCount">0</strong></div></div>
+      <div class="simple-card"><h3>Challenge</h3><p>60 soniyada kamida 30 WPM va 90% aniqlikka erish.</p><div class="challenge-reward">Mukofot: <strong>+25 XP</strong></div></div>
+    </section>
+
+    <section id="subscriptionsPage" class="page hidden">
+      <div class="page-intro"><span class="tag">TYPEFLOW MEMBERSHIP</span><h2>O'zingga mos tarifni tanla</h2><p>Bepul boshlang yoki ko'proq mashq, chuqur statistika va shaxsiy tavsiyalar bilan tezroq rivojlan.</p></div>
+      <div class="billing-note"><strong>💡 Eslatma:</strong> 6 oylik tariflar chegirmali. Narxlar so'mda ko'rsatilgan.</div>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <div class="plan-top"><span class="plan-icon">○</span><span class="plan-label">BOSHLASH UCHUN</span></div>
+          <h3>Free</h3><p class="plan-description">Yozish tezligini endi oshirayotganlar uchun.</p>
+          <div class="plan-price">0 <small>so'm</small></div><div class="plan-period">Doim bepul</div>
+          <ul class="plan-features">
+            <li>✓ Kuniga 3 ta mashq</li><li>✓ Oddiy va Plus darajalari</li><li>✓ 30 va 60 soniyalik testlar</li><li>✓ WPM va aniqlik natijalari</li><li>✓ Asosiy statistika va mashq tarixi</li><li>✓ Dark mode va 3 ta interfeys tili</li>
+          </ul>
+          <button class="plan-button secondary-btn" data-plan="Free">Free tarifda qolish</button>
+        </article>
+        <article class="pricing-card featured">
+          <div class="popular-badge">ENG OMMABOP</div>
+          <div class="plan-top"><span class="plan-icon">✦</span><span class="plan-label">MUNTAZAM MASHQ</span></div>
+          <h3>Pro</h3><p class="plan-description">Muntazam shug'ullanib, natijasini yaxshilamoqchi bo'lganlar uchun.</p>
+          <div class="plan-price">15 000 <small>so'm</small></div><div class="plan-period">oyiga · 6 oyga 60 000 so'm</div>
+          <ul class="plan-features">
+            <li>✓ Kuniga cheksiz mashq</li><li>✓ Oddiy, Plus va Pro darajalari</li><li>✓ 30, 60, 90 va 120 soniyalik testlar</li><li>✓ To'liq statistika va tezlik grafigi</li><li>✓ Xatolar va aniqlikni kuzatish</li><li>✓ Shaxsiy mashq maqsadlari</li><li>✓ Mashq tarixini kengaytirilgan ko'rish</li>
+          </ul>
+          <button class="plan-button primary-btn" data-plan="Pro">Pro tarifini tanlash</button>
+        </article>
+        <article class="pricing-card">
+          <div class="plan-top"><span class="plan-icon">♛</span><span class="plan-label">MAKSIMAL RIVOJLANISH</span></div>
+          <h3>Ultra</h3><p class="plan-description">Eng yuqori natija va chuqur tahlil istaydiganlar uchun.</p>
+          <div class="plan-price">25 000 <small>so'm</small></div><div class="plan-period">oyiga · 6 oyga 120 000 so'm</div>
+          <ul class="plan-features">
+            <li>✓ Pro tarifidagi barcha imkoniyatlar</li><li>✓ Ultra darajadagi murakkab matnlar</li><li>✓ Batafsil xato tahlili</li><li>✓ Haftalik rivojlanish hisoboti</li><li>✓ Shaxsiy tezlik maqsadlari</li><li>✓ Maxsus challenge va mashqlar</li><li>✓ Yangi premium imkoniyatlarga ustuvor kirish</li>
+          </ul>
+          <button class="plan-button secondary-btn" data-plan="Ultra">Ultra tarifini tanlash</button>
+        </article>
+      </div>
+      <div class="simple-card pricing-details"><h3>Obuna nimaga yordam beradi?</h3><div class="benefit-grid">
+        <div><strong>⚡ Tezlikni oshirish</strong><p>Muntazam testlar orqali WPM ko'rsatkichingni bosqichma-bosqich yaxshila.</p></div>
+        <div><strong>⌁ Xatolarni tushunish</strong><p>Aniqlik va xatolarni kuzatib, qaysi joylarda ko'proq mashq kerakligini bil.</p></div>
+        <div><strong>▥ Rivojlanishni kuzatish</strong><p>Natijalarni solishtir, o'z maqsadingni belgilab, taraqqiyotingni ko'r.</p></div>
+        <div><strong>✦ Muntazamlik</strong><p>Kunlik maqsad va challenge'lar mashq qilish odatini shakllantirishga yordam beradi.</p></div>
+      </div></div>
+      <p class="payment-disclaimer">Hozircha bu tariflar sahifasi demo ko'rinishida: onlayn to'lov va obuna holatini server orqali tekshirish hali ulanmagan.</p>
+    </section>
+
+    <section id="settingsPage" class="page hidden">
+      <div class="page-intro"><span class="tag">PERSONALIZE</span><h2>Sozlamalar</h2><p>TypeFlow'ni o'zingga moslashtir.</p></div>
+      <div class="simple-card settings-card">
+        <label class="setting-row"><span><strong>Ko'rinish</strong><small>Oq yoki qora mavzu</small></span><button id="themeSetting" class="secondary-btn">Dark mode</button></label>
+        <label class="setting-row"><span><strong>Interfeys tili</strong><small>Menudagi matnlar tili</small></span><select id="languageSelect"><option value="uz">O'zbekcha</option><option value="en">English</option><option value="ru">Русский</option></select></label>
+        <label class="setting-row"><span><strong>Matn o'lchami</strong><small>Yoziladigan so'zlar</small></span><select id="fontSize"><option value="20">Kichik</option><option value="24" selected>O'rtacha</option><option value="30">Katta</option></select></label>
+        <label class="setting-row"><span><strong>Xatolarni ajratish</strong><small>Noto'g'ri harflarni ko'rsatish</small></span><input id="showErrors" type="checkbox" checked></label>
+        <label class="setting-row"><span><strong>Tugma tovushi</strong><small>Yozishda yengil signal</small></span><input id="soundToggle" type="checkbox"></label>
+      </div>
+    </section>
+    <footer class="footer">TypeFlow <span>•</span> Har kuni ozgina mashq — katta natija.</footer>
+  </main>
+</div>
+<div id="planModal" class="modal hidden">
+  <div class="modal-card"><button id="closePlan" class="modal-close">×</button><span class="tag">TYPEFLOW MEMBERSHIP</span><div class="result-icon">✦</div><h2 id="planModalTitle">Tarif tanlandi</h2><p id="planModalText">Bu tarif demo rejimida ko'rsatilmoqda.</p><button id="planModalOk" class="primary-btn">Tushunarli</button></div>
+</div>
+<div id="resultModal" class="modal hidden">
+  <div class="modal-card"><button id="closeResult" class="modal-close">×</button><span class="tag">SESSION COMPLETE</span><div class="result-icon">✓</div><h2>Ajoyib mashq!</h2><p>Mana bu safargi natijang.</p><div class="result-stats"><div><strong id="resultWpm">0</strong><span>WPM</span></div><div><strong id="resultAccuracy">100%</strong><span>Aniqlik</span></div><div><strong id="resultErrors">0</strong><span>Xato</span></div></div><div class="earned-xp">✦ <strong id="earnedXP">+0 XP</strong> qo'lga kiritding</div><button id="continueBtn" class="primary-btn">Davom etish</button></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

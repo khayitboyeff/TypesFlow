@@ -1,0 +1,17 @@
+{
+  "name": "TypeFlow — Typing Practice",
+  "short_name": "TypeFlow",
+  "description": "Typing practice, speed and accuracy tracking.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#f5f7fb",
+  "icons": [
+    {
+      "src": "assets/typeflow-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
